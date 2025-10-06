@@ -12,3 +12,6 @@ DEFAULT_COMMANDS = (
     ("start", "Запустить бота"),
     ("help", "Вывести справку")
 )
+
+BASE_URL = 'https://api.kinopoisk.dev/'
+API_KEY = '8217471619:AAHV75CPNFuTj2YCEmKF44qE2-8-dwJlJ5U'
