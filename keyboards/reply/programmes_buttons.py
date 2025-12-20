@@ -11,7 +11,8 @@ def buttons():
     keyboard = ReplyKeyboardMarkup(
         row_width=2,  # Максимум 2 кнопки в строке
         resize_keyboard=True,  # Автоматически подстраивает размер под экран
-        one_time_keyboard=True  # Скрывает клавиатуру после нажатия (опционально)
+        one_time_keyboard=True
+        # Скрывает клавиатуру после нажатия
     )
 
     # Добавляем кнопки в две строки
