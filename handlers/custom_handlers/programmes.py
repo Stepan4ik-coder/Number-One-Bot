@@ -14,13 +14,13 @@ def show_buttons(message: Message):
     )
 
 
-@bot.message_handler(func=lambda m: m.text in ('Основная программа', 'Подготовка к ОГЭ и ЕГЭ', 'Дополнительная программа'))
+@bot.message_handler(func=lambda m: m.text in ('📘 Основная программа', '📚 Подготовка к ОГЭ и ЕГЭ', '🌟 Дополнительная программа'))
 def each_buttons(message):
-    if message.text == 'Основная программа':
+    if message.text == '📘 Основная программа':
         bot.send_message(message.chat.id, f'📘 **Основная программа**\n\n{MAIN_PROGRAMME}', parse_mode='Markdown')
-    elif message.text == 'Подготовка к ОГЭ и ЕГЭ':
+    elif message.text == '📚 Подготовка к ОГЭ и ЕГЭ':
         bot.send_message(message.chat.id, f'📚 **Подготовка к ОГЭ и ЕГЭ**\n\n{STATES_EXAM}', parse_mode='Markdown')
-    elif message.text == 'Дополнительная программа':
+    elif message.text == '🌟 Дополнительная программа':
         bot.send_message(message.chat.id, f'🌟 **Дополнительная программа**\n\n{ADDITIONAL_PROGRAMME}', parse_mode='Markdown')
 
 

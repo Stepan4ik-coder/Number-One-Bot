@@ -16,10 +16,10 @@ def check_exists(value_id, message):
         bot.send_message(message.chat.id, f'⚠️ **Найден существующий пользователь!**\n\n'
                                           f'📅 **Дата создания:** {found_user.created_at}\n'
                                           f'🆔 **ID:** {found_user.user_id}\n'
-                                          f'👤 **Имя:** {found_user.first_name}\n'
-                                          f'📋 **Фамилия:** {found_user.surname}\n'
-                                          f'🎂 **Возраст:** {found_user.age}\n'
-                                          f'📞 **Номер телефона:** {found_user.phone_number}\n'
+                                          f'👤 **Имя:** {found_user.first_name if found_user.first_name else "❌ Не указано"}\n'
+                                          f'📋 **Фамилия:** {found_user.surname if found_user.surname else "❌ Не указано"}\n'
+                                          f'🎂 **Возраст:** {found_user.age if found_user.age else "❌ Не указано"}\n'
+                                          f'📞 **Номер телефона:** {found_user.phone_number if found_user.phone_number and found_user.phone_number != "pending" else "❌ Не указано"}\n'
                                           f'🎓 **Выбранная программа обучения:** {name_of_programme}\n\n'
                                           f'❓ **Желаете перезаписать данные?**',
                                           reply_markup=keyboard,
