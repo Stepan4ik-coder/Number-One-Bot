@@ -25,4 +25,5 @@ db.create_tables([User, Programme], safe=True)
 
 if __name__ == "__main__":
     set_default_commands(bot)
+    print("🤖 Бот запускается...")
     bot.infinity_polling()
