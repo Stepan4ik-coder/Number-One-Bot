@@ -6,8 +6,8 @@ def get_group_id(message):
     chat_id = message.chat.id
     chat_type = message.chat.type  # 'group', 'supergroup', 'private'
 
-    bot.reply_to(
-        message,
+    bot.send_message(
+        message.chat.id,
         f"📊 ID этого чата: `{chat_id}`\n"
         f"📝 Тип чата: {chat_type}",
         parse_mode='Markdown'
