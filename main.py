@@ -21,6 +21,7 @@ def get_message():
     bot.process_new_updates([update])
     return 'ok'
 
+
 @app.route('/setup')
 def setup():
     bot.set_webhook(url="https://number-one-bot.onrender.com/")
