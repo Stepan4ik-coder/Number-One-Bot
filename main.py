@@ -3,6 +3,7 @@ from utils.set_bot_commands import set_default_commands
 from database.models import db, User, Programme
 from flask import Flask, request
 import handlers  # noqa
+import telebot
 
 
 # Flask приложение
@@ -16,7 +17,7 @@ def home():
 @app.route('/', methods=['POST'])
 def get_message():
     data = request.get_json()
-    update = bot.types.Update.de_json(data)
+    update = telebot.types.Update.de_json(data)
     bot.process_new_updates([update])
     return 'ok'
 
