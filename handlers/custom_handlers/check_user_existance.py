@@ -3,6 +3,7 @@ from database import models
 from keyboards.inline import gen_yes_and_no_answer_button
 from .get_user_information import get_first_name
 
+
 def check_exists(value_id, message):
     if models.User.select().where(models.User.user_id == value_id).exists():
         found_user = models.User.get_or_none(models.User.user_id == value_id)
