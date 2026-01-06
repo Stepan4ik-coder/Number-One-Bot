@@ -23,7 +23,7 @@ def check_exists(value_id, message):
                                           f'🎓 **Выбранная программа обучения:** {name_of_programme}\n\n'
                                           f'❓ **Желаете перезаписать данные?**',
                                           reply_markup=keyboard,
-                                          parse_mode='Markdown')
+                                          parse_mode='HTML')
         return True
     return False
 
@@ -43,8 +43,8 @@ def overwriting_yes(callback_query):
     models.User.delete().where(models.User.user_id == user_id).execute()
     models.User.create(user_id=user_id, username=username, phone_number=phone_number)
 
-    bot.send_message(chat_id, '🎉 **Мы рады, что вы готовы присоединиться к Number One!**', parse_mode='Markdown')
-    first_name = bot.send_message(chat_id, '👤 **Ваше имя (имя ребёнка):**', parse_mode='Markdown')
+    bot.send_message(chat_id, '🎉 **Мы рады, что вы готовы присоединиться к Number One!**', parse_mode='HTML')
+    first_name = bot.send_message(chat_id, '👤 **Ваше имя (имя ребёнка):**', parse_mode='HTML')
     bot.register_next_step_handler(first_name, get_first_name)  # ➡️ Переход к следующему шагу
 
 
@@ -55,5 +55,5 @@ def overwriting_no(callback_query):
     user_id = int(user_id_str)  # получаем ID
     chat_id = callback_query.message.chat.id
 
-    bot.send_message(chat_id, f'✅ **Данные пользователя с ID {user_id} сохранены без изменений!** 🎉', parse_mode='Markdown')
+    bot.send_message(chat_id, f'✅ **Данные пользователя с ID {user_id} сохранены без изменений!** 🎉', parse_mode='HTML')
 
