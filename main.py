@@ -24,7 +24,7 @@ def get_message():
 
 @app.route('/setup')
 def setup():
-    bot.set_webhook(url="https://number-one-bot.onrender.com/")
+    bot.set_webhook(url="https://stepan4ik-coder-number-one-bot-a37b.twc1.net/")
     return "Готово! Бот настроен."
 
 
