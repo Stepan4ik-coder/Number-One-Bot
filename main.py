@@ -32,6 +32,13 @@ def setup():
 db.connect()
 db.create_tables([User, Programme], safe=True)
 
+# Устанавливаем webhook и команды бота автоматически при старте приложения
+webhook_url = "https://stepan4ik-coder-number-one-bot-a37b.twc1.net/"
+bot.set_webhook(url=webhook_url)
+set_default_commands(bot)
+print(f"✅ Webhook установлен: {webhook_url}")
+print("✅ Команды бота установлены")
+
 if __name__ == "__main__":
     set_default_commands(bot)
     print("🤖 Бот запускается...")
