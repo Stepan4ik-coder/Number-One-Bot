@@ -8,7 +8,7 @@ from peewee import *
 from datetime import datetime
 
 
-db = SqliteDatabase('../user.db')
+db = SqliteDatabase('user.db')
 
 class User(Model):
     user_id = IntegerField(unique=True)
